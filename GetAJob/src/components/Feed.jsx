@@ -3,7 +3,7 @@ import { Box, Button, Container, InputBase, Typography } from "@mui/material";
 import React from "react";
 
 function Feed() {
-  const Search = styled("div")(({ theme }) => ({
+  const Search = styled(Box)(({ theme }) => ({
     backgroundColor: "#E5E7EB",
     padding: "8px",
     width: "80%",
@@ -21,7 +21,7 @@ function Feed() {
         justifyContent: "space-between",
       }}
     >
-      <Box sx={{ paddingTop: "100px", paddingLeft: "70px" }}>
+      <Box sx={{ paddingTop: "100px", paddingLeft: { xs: "20px", sm: "4%" } }}>
         <Typography
           sx={{
             color: "black",
@@ -67,22 +67,40 @@ function Feed() {
         </Typography>
         <Box
           sx={{
-            height: "74px",
-            width: "800px",
+            height: { xs: "130px", md: "74px" },
+            width: {
+              xs: "400px",
+              sm: "80%",
+              md: "700px",
+              lg: "750px",
+              xl: "800px",
+            },
             background: "white",
             display: "flex",
             alignItems: "center",
-            paddingLeft: "40px",
+            flexDirection: { xs: "column", md: "row" },
+            paddingLeft: { xs: "0px", md: "4%" },
             marginTop: "50px",
+            display: "flex",
           }}
         >
-          <Search>
+          <Search
+            sx={{
+              marginTop: { xs: "20px", sm: "20px", md: "0px" },
+            }}
+          >
             <InputBase
               sx={{ width: "100%" }}
               placeholder="Search Jobs with Job categories like marketing ..."
             />
           </Search>
-          <Button sx={{ marginLeft: "35px" }} variant="contained">
+          <Button
+            sx={{
+              marginLeft: { md: "20px", sm: "20px", lg: "30px" },
+              marginTop: { xs: "20px", sm: "20px", md: "0px" },
+            }}
+            variant="contained"
+          >
             SEARCH
           </Button>
         </Box>
