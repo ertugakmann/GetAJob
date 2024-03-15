@@ -7,6 +7,7 @@ import {
   Toolbar,
   Typography,
   MenuItem,
+  Link,
 } from "@mui/material";
 import PetsIcon from "@mui/icons-material/Pets";
 import { InputBase } from "@mui/material";
@@ -24,6 +25,7 @@ function Navbar() {
     background: "rgb(127,34,195)",
     background:
       "radial-gradient(circle, rgba(127,34,195,1) 23%, rgba(74,45,253,1) 100%)",
+    height: 80,
   });
 
   const Search = styled("div")(({ theme }) => ({
@@ -51,22 +53,50 @@ function Navbar() {
     fontWeight: "489",
     fontStyle: "bold",
   }));
+
+  const StyledLink = styled(Link)(({ theme }) => ({
+    fontFamily: "Montserrat",
+    fontOpticalSizing: "auto",
+    fontWeight: "700",
+    letterSpacing: "1px",
+    fontStyle: "bold",
+    color: "white",
+    padding: "30px",
+  }));
+
   return (
     <AppBar position="fixed">
       <StyledToolBar>
         <StyledLogoText
           variant="h6"
-          sx={{ display: { xs: "none", sm: "block" } }}
+          sx={{ display: { xs: "none", lg: "block" } }}
         >
           Get A Job
         </StyledLogoText>
         <MenuIcon
           onClick={(e) => setOpen(true)}
-          sx={{ display: { xs: "block", sm: "none" } }}
+          sx={{ display: { xs: "block", lg: "none" } }}
         />
-        <Search>
-          <InputBase sx={{ width: "100%" }} placeholder="Search..." />
-        </Search>
+        <Box sx={{ display: { xs: "none", lg: "block" } }}>
+          <StyledLink href="#" underline="none">
+            Home
+          </StyledLink>
+          <StyledLink href="#" underline="none">
+            Post Jobs
+          </StyledLink>
+          <StyledLink href="#" underline="none">
+            View Jobs
+          </StyledLink>
+          <StyledLink href="#" underline="none">
+            Posted Jobs
+          </StyledLink>
+          <StyledLink href="#" underline="none">
+            Dashboard
+          </StyledLink>
+          <StyledLink href="#" underline="none">
+            Contact
+          </StyledLink>
+        </Box>
         <Icons>
           <Badge
             badgeContent={4}
@@ -92,7 +122,9 @@ function Navbar() {
           />
         </Icons>
         <UserBox sx={{ display: { xs: "flex", sm: "none" } }}>
-          <Typography variant="span">Ertug</Typography>
+          <Typography sx={{ fontFamily: "Montserrat" }} variant="span">
+            Ertug
+          </Typography>
           <Avatar
             sx={{ width: "30px", height: "30px" }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -114,9 +146,12 @@ function Navbar() {
           horizontal: "left",
         }}
       >
-        <MenuItem>Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem>Logout</MenuItem>
+        <MenuItem>Home</MenuItem>
+        <MenuItem>Post Job</MenuItem>
+        <MenuItem>View Jobs</MenuItem>
+        <MenuItem>Posted Jobs</MenuItem>
+        <MenuItem>DashBoard</MenuItem>
+        <MenuItem>Contact</MenuItem>
       </Menu>
     </AppBar>
   );
