@@ -105,6 +105,9 @@ function Feed() {
           </Button>
         </Box>
       </Box>
+      <Box sx={{ marginRight: "120px", marginTop: "70px" }}>
+        <img src="https://job-portal-teal.vercel.app/_next/image?url=%2Fintro.png&w=640&q=75" />
+      </Box>
     </Box>
   );
 }
